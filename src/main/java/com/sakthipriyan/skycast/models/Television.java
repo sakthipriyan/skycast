@@ -3,9 +3,12 @@ package com.sakthipriyan.skycast.models;
 import java.util.Set;
 
 public class Television {
+	
 	private int minChannel;
 	private int maxChannel;
 	private Set<Integer> blockedChannels;
+	private int previousChannel;
+	private int currentChannel;
 
 	public Television(int minChannel, int maxChannel,
 			Set<Integer> blockedChannels) {
@@ -13,6 +16,8 @@ public class Television {
 		this.minChannel = minChannel;
 		this.maxChannel = maxChannel;
 		this.blockedChannels = blockedChannels;
+		previousChannel = -1;
+		currentChannel = -1;
 	}
 
 	public int getMinChannel() {
@@ -25,6 +30,23 @@ public class Television {
 
 	public Set<Integer> getBlockedChannels() {
 		return blockedChannels;
+	}
+
+	public int getPreviousChannel() {
+		return previousChannel;
+	}
+
+	public int getCurrentChannel() {
+		return currentChannel;
+	}
+
+	public void setChannel(int channel) {
+		previousChannel = currentChannel;
+		currentChannel = channel;
+	}
+	
+	public boolean isBlocked(int channel){
+		return blockedChannels.contains(channel);
 	}
 
 }
