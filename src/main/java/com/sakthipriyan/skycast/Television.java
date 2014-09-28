@@ -51,5 +51,13 @@ public class Television {
 	public boolean isBlocked(int channel){
 		return blockedChannels.contains(channel);
 	}
+	
+	public int getUpChannel(int channel){
+		return -1;
+	}
+	
+	public int getDownChannel(int channel){
+		return -1;
+	}
 
 }

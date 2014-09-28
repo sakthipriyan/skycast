@@ -17,6 +17,7 @@ public class TelevisionTest {
 		blockedChannels.add(21);
 		blockedChannels.add(31);
 		blockedChannels.add(41);
+		blockedChannels.add(42);
 		television = new Television(20, 300, blockedChannels);
 	}
 
@@ -62,4 +63,23 @@ public class TelevisionTest {
 		Assert.assertTrue(television.isBlocked(31));
 	}
 
+	@Test
+	public void testGeUpChannel(){
+		int up = television.getUpChannel(300);
+		Assert.assertEquals(20, up);
+		up = television.getUpChannel(20);
+		Assert.assertEquals(22, up);
+		up = television.getUpChannel(40);
+		Assert.assertEquals(43, up);
+	}
+	
+	@Test
+	public void testGetDownChannel(){
+		int down = television.getDownChannel(20);
+		Assert.assertEquals(300, down);
+		down = television.getDownChannel(22);
+		Assert.assertEquals(20, down);
+		down = television.getDownChannel(43);
+		Assert.assertEquals(40, down);
+	}
 }
