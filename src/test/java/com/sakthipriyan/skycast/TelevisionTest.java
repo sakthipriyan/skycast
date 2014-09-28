@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TelevisionTest {
-	
+
 	private Television television;
 
 	@Before
@@ -47,17 +47,15 @@ public class TelevisionTest {
 		television.setChannel(32);
 		Assert.assertEquals(32, television.getCurrentChannel());
 	}
-	
+
 	@Test
 	public void testSetChannelAgain() {
 		television.setChannel(32);
 		television.setChannel(33);
 		television.setChannel(33);
 		Assert.assertEquals(33, television.getCurrentChannel());
-		Assert.assertEquals(32, television.getCurrentChannel());
+		Assert.assertEquals(32, television.getPreviousChannel());
 	}
-	
-		
 
 	@Test
 	public void testIsBlocked() {
