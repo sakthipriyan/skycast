@@ -16,8 +16,8 @@ public class Television {
 		this.minChannel = minChannel;
 		this.maxChannel = maxChannel;
 		this.blockedChannels = blockedChannels;
-		previousChannel = -1;
-		currentChannel = -1;
+		this.previousChannel = -1;
+		this.currentChannel = -1;
 	}
 
 	public int getMinChannel() {
