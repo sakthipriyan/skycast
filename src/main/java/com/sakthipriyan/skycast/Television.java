@@ -48,12 +48,16 @@ public class Television {
 		
 	}
 	
+	public boolean isBlocked(int channel){
+		return blockedChannels.contains(channel);
+	}
+	
 	public int getUpChannel(int channel) {
 		channel++;
 		if (channel > maxChannel) {
 			channel = minChannel;
 		}
-		while (blockedChannels.contains(channel)) {
+		while (isBlocked(channel)) {
 			channel++;
 			if (channel > maxChannel) {
 				channel = minChannel;
@@ -67,7 +71,7 @@ public class Television {
 		if (channel < minChannel) {
 			channel = maxChannel;
 		}
-		while (blockedChannels.contains(channel)) {
+		while (isBlocked(channel)) {
 			channel--;
 			if (channel < minChannel) {
 				channel = maxChannel;
