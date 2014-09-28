@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TelevisionTest {
@@ -33,7 +34,7 @@ public class TelevisionTest {
 
 	@Test
 	public void testGetBlockedChannels() {
-		Assert.assertEquals(3, television.getBlockedChannels().size());
+		Assert.assertEquals(4, television.getBlockedChannels().size());
 	}
 
 	@Test
@@ -73,7 +74,7 @@ public class TelevisionTest {
 		Assert.assertEquals(43, up);
 	}
 	
-	@Test
+	@Test //@Ignore
 	public void testGetDownChannel(){
 		int down = television.getDownChannel(20);
 		Assert.assertEquals(300, down);
