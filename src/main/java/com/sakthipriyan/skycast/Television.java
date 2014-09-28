@@ -4,9 +4,9 @@ import java.util.Set;
 
 public class Television {
 	
-	private int minChannel;
-	private int maxChannel;
-	private Set<Integer> blockedChannels;
+	private final int minChannel;
+	private final int maxChannel;
+	private final Set<Integer> blockedChannels;
 	private int previousChannel;
 	private int currentChannel;
 
@@ -48,16 +48,12 @@ public class Television {
 		
 	}
 	
-	public boolean isBlocked(int channel){
-		return blockedChannels.contains(channel);
-	}
-	
 	public int getUpChannel(int channel) {
 		channel++;
 		if (channel > maxChannel) {
 			channel = minChannel;
 		}
-		while (isBlocked(channel)) {
+		while (blockedChannels.contains(channel)) {
 			channel++;
 			if (channel > maxChannel) {
 				channel = minChannel;
@@ -67,7 +63,17 @@ public class Television {
 	}
 	
 	public int getDownChannel(int channel){
-		return -1;
+		channel--;
+		if (channel < minChannel) {
+			channel = maxChannel;
+		}
+		while (blockedChannels.contains(channel)) {
+			channel--;
+			if (channel < minChannel) {
+				channel = maxChannel;
+			}
+		}
+		return channel;
 	}
 
 }
