@@ -1,4 +1,4 @@
-package com.sakthipriyan.skycast.models;
+package com.sakthipriyan.skycast;
 
 import java.util.Set;
 

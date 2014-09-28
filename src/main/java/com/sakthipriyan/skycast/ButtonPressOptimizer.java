@@ -1,7 +1,6 @@
 package com.sakthipriyan.skycast;
 
 import com.sakthipriyan.skycast.models.Button;
-import com.sakthipriyan.skycast.models.Television;
 
 public class ButtonPressOptimizer {
 	private Television tv;
