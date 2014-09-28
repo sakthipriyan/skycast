@@ -1,7 +1,5 @@
 package com.sakthipriyan.skycast;
 
-import static org.junit.Assert.fail;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,10 +13,22 @@ public class ButtonPressOptimizerTest {
 	@Test
 	public void testOptimizeWithNoBlockedChannels() {
 		Set<Integer> blockedChannels = new HashSet<Integer>();
+		blockedChannels.add(10);
+		blockedChannels.add(1);
+		blockedChannels.add(2);
+		blockedChannels.add(20);
 		Television tv = new Television(1,20,blockedChannels);
 		ButtonPressOptimizer optimizer = new ButtonPressOptimizer(tv);
-		Button[] buttons1 =  optimizer.optimize(2);
-		Assert.assertSame(buttons1.length, 1);
+		Button[] buttons =  optimizer.optimize(3);
+		for(Button button: buttons){
+			System.out.println(button);	
+		}
+		tv.setChannel(9);
+		buttons =  optimizer.optimize(11);
+		for(Button button: buttons){
+			System.out.print(button + " ");	
+		}
+		Assert.assertSame(buttons.length, 1);
 /*		 
 		List<Integer> channels = new ArrayList<Integer>(10);
 		channels.add(2);
@@ -27,7 +37,7 @@ public class ButtonPressOptimizerTest {
 		channels.add(9);
 		channels.add(13);
 */		
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }
