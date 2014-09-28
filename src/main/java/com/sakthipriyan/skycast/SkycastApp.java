@@ -10,9 +10,9 @@ import com.sakthipriyan.skycast.models.Button;
 public class SkycastApp {
 
 	public static void main(String[] args) {
-		String channelLimits = "1 100";
-		String blockedChannels = "4 78 79 80 3";
-		String viewChannels = "8 10 13 13 100 99 98 77 81";
+		String channelLimits = args[0];
+		String blockedChannels = args[1];
+		String viewChannels = args[2];
 		SkycastApp skycastApp = new SkycastApp();
 		int count = skycastApp.process(channelLimits, blockedChannels, viewChannels);
 		System.out.println("No of button press required => " + count);
