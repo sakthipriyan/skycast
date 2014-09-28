@@ -1,10 +1,8 @@
 package com.sakthipriyan.skycast;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -12,10 +10,7 @@ import org.junit.Test;
 
 import com.sakthipriyan.skycast.models.Button;
 
-
 public class ButtonPressOptimizerTest {
-	
-	
 
 	@Test
 	public void testOptimizeWithNoBlockedChannels() {

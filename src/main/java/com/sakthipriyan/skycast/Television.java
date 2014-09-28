@@ -41,8 +41,11 @@ public class Television {
 	}
 
 	public void setChannel(int channel) {
-		previousChannel = currentChannel;
-		currentChannel = channel;
+		if(channel != currentChannel){
+			previousChannel = currentChannel;
+			currentChannel = channel;	
+		}
+		
 	}
 	
 	public boolean isBlocked(int channel){
