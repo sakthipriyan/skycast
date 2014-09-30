@@ -2,6 +2,11 @@ package com.sakthipriyan.skycast;
 
 import com.sakthipriyan.skycast.models.Button;
 
+/**
+ * This is a helper class that generates buttons
+ * for different use cases.
+ * @author sakthipriyan
+ */
 public class ButtonGenerator {
 	public Button[] getButtons(Button button, int count) {
 		Button[] buttons = new Button[count];
@@ -24,12 +29,6 @@ public class ButtonGenerator {
 	public Button[] getButtonsUptoNine(int nextChannel){
 		Button[] buttons = new Button[1];
 		buttons[0] = Button.get(nextChannel);
-		return buttons;
-	}
-	
-	public Button[] getButtonsWithBack(){
-		Button[] buttons = new Button[1];
-		buttons[0] = Button.BACK;
 		return buttons;
 	}
 }
