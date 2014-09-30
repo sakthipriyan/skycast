@@ -1,6 +1,5 @@
 #skycast
 
-
 ##Environment tested
 ```
 Java 1.7.0_40
@@ -15,7 +14,7 @@ git clone https://github.com/spriyan/skycast.git
 ##Setup using mvn
 ```
 cd skycast
-mvn clean install
+mvn install
 ```
 
 ##How to run?
